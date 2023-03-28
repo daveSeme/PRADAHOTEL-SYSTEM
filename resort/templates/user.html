@@ -1,0 +1,153 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Prada Hotels and Resorts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="//fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+
+    <link rel="stylesheet" href="{%static 'assets/css/open-iconic-bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/animate.css'%}">
+   
+    <link rel="stylesheet" href="{%static 'assets/css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/magnific-popup.css'%}">
+
+    <link rel="stylesheet" href="{%static 'assets/css/aos.css'%}">
+
+    <link rel="stylesheet" href="{%static 'assets/css/ionicons.min.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/bootstrap-datepicker.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/jquery.timepicker.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/flaticon.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/icomoon.css'%}">
+    <link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Prada</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+				<li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Sign Up</a></li>
+				<li class="nav-item"><a href="{% url 'rooms' %}" class="nav-link">Rooms</a></li>
+				<li class="nav-item"><a href="{% url 'restaurant' %}" class="nav-link">Restaurant</a></li>
+				<li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+	         
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    <div class="hero-wrap" style="background-image: url({%static 'images/bg_1.jpg'%});">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text d-flex align-itemd-end justify-content-center">
+          <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
+          	<div class="text">
+	            <h1 class="mb-4 bread">Login</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+        
+    <section class="signup">
+        <div class="container-fluid">
+            <div class="row no-gutters justify-content-center pb-5">
+              <div class="col-md-7 text-center heading-section ftco-animate">
+                <h2><span>Login</span></h2>
+              </div>
+            </div>
+            
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                background-color: #f5f5f5;
+              }
+              .container {
+                max-width: 500px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: white;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+              }
+              h1 {
+                text-align: center;
+              }
+              label {
+                display: block;
+                margin-bottom: 5px;
+              }
+              input[type="text"], input[type="email"], input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: none;
+                border-radius: 5px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+              }
+              input[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+                margin-bottom: 20px;
+              }
+              input[type="submit"]:hover {
+                background-color: #3e8e41;
+              }
+              .message {
+                color: red;
+                font-size: 14px;
+                margin-bottom: 20px;
+              }
+              @media screen and (max-width: 768px) {
+                .container {
+                  max-width: 100%;
+                  padding: 10px;
+                }
+              }
+            </style>
+          </head>
+          <body>
+            <div class="container">
+              <h1>Login</h1>
+              {% if messages %}
+                {% for message in messages %}
+                  <p class="message">{{ message }}</p>
+                {% endfor %}
+              {% endif %}
+              <form method="post">
+                {% csrf_token %}
+                <label for="username">Username:</label>
+                <input type="text" name="name" required>
+          
+                <label for="password">Password:</label>
+                <input type="password" name="password" required>
+          
+                <input type="submit" value="Login">
+                <p>Don't have an account? <a href="{% url 'register' %}">Sign up here</a></p>
+              </form>
+            </div>
+          </body>
+          </html>
+          
+          
+          
+          
+          
+          
